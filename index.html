@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frutería Zaragoza - Calidad y Frescura</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap');
+        
+        :root {
+            --primary: #2d5a27;
+            --secondary: #f47920;
+            --accent: #eef5ed;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .legal-content {
+            display: none;
+        }
+
+        .active-page {
+            display: block;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-green-800 tracking-tighter">FRUTERÍA <span class="text-orange-500">ZARAGOZA</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#inicio" onclick="showPage('main-content')" class="text-gray-600 hover:text-green-700 font-medium">Inicio</a>
+                    <a href="#productos" onclick="showPage('main-content')" class="text-gray-600 hover:text-green-700 font-medium">Productos</a>
+                    <a href="#contacto" onclick="showPage('main-content')" class="text-gray-600 hover:text-green-700 font-medium">Ubicación</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <div id="main-content" class="active-page pt-20">
+        
+        <!-- Hero Section -->
+        <section id="inicio" class="hero-gradient h-[80vh] flex items-center justify-center text-center text-white px-4">
+            <div class="max-w-3xl">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">Frescura que viene del campo</h1>
+                <p class="text-xl mb-8 opacity-90">Tu frutería de confianza en el corazón de Zaragoza. Calidad seleccionada cada mañana para tu mesa.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="https://www.google.com/maps/dir//C.+de+Tom%C3%A1s+Bret%C3%B3n,+26,+50005+Zaragoza" target="_blank" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold transition shadow-lg">
+                        Cómo llegar
+                    </a>
+                    <a href="tel:631717179" class="bg-white text-green-800 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold transition shadow-lg">
+                        <i class="fas fa-phone mr-2"></i> 631 71 71 79
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Información Rápida -->
+        <section class="py-12 bg-green-800 text-white">
+            <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <i class="fas fa-clock text-3xl text-orange-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Horario Amplio</h3>
+                    <p class="opacity-80">Abierto hoy hasta las 21:00</p>
+                </div>
+                <div>
+                    <i class="fas fa-map-marker-alt text-3xl text-orange-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Ubicación Central</h3>
+                    <p class="opacity-80">C/ Tomás Bretón, 26, 50005 Zaragoza</p>
+                </div>
+                <div>
+                    <i class="fas fa-truck text-3xl text-orange-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Productos Locales</h3>
+                    <p class="opacity-80">Frutas y verduras de proximidad</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Productos -->
+        <section id="productos" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-4xl font-bold mb-4">Nuestra Selección</h2>
+                <p class="text-gray-600 mb-12 max-w-2xl mx-auto">Seleccionamos cada pieza para garantizar el sabor y las propiedades nutricionales más óptimas.</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Producto 1 -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm card-hover">
+                        <img src="https://images.unsplash.com/photo-1570913149827-d2ac84ab3f9a?auto=format&fit=crop&q=80&w=400" alt="Manzanas" class="w-full h-48 object-cover rounded-xl mb-4">
+                        <h3 class="text-lg font-bold">Manzanas de Aragón</h3>
+                        <p class="text-sm text-gray-500">Crujientes y dulces</p>
+                    </div>
+                    <!-- Producto 2 -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm card-hover">
+                        <img src="https://images.unsplash.com/photo-1518133835878-5a93cc3f89e5?auto=format&fit=crop&q=80&w=400" alt="Verduras" class="w-full h-48 object-cover rounded-xl mb-4">
+                        <h3 class="text-lg font-bold">Verdura de la Ribera</h3>
+                        <p class="text-sm text-gray-500">Directo del campo</p>
+                    </div>
+                    <!-- Producto 3 -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm card-hover">
+                        <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&q=80&w=400" alt="Frutas" class="w-full h-48 object-cover rounded-xl mb-4">
+                        <h3 class="text-lg font-bold">Fruta de Temporada</h3>
+                        <p class="text-sm text-gray-500">Siempre fresca</p>
+                    </div>
+                    <!-- Producto 4 -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm card-hover">
+                        <img src="https://images.unsplash.com/photo-1596333677718-449f12295dc2?auto=format&fit=crop&q=80&w=400" alt="Cítricos" class="w-full h-48 object-cover rounded-xl mb-4">
+                        <h3 class="text-lg font-bold">Cítricos Seleccionados</h3>
+                        <p class="text-sm text-gray-500">Vitaminas naturales</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto y Mapa -->
+        <section id="contacto" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex flex-wrap -mx-4">
+                    <div class="w-full lg:w-1/2 px-4 mb-12 lg:mb-0">
+                        <h2 class="text-4xl font-bold mb-6">¿Dónde encontrarnos?</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-green-800"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Dirección</h4>
+                                    <p class="text-gray-600">C/ Tomás Bretón, 26, 50005 Zaragoza</p>
+                                    <p class="text-xs text-gray-400 mt-1">Código Plus: J4V3+VQ Zaragoza</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone text-green-800"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Teléfono</h4>
+                                    <p class="text-gray-600">631 71 71 79</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-clock text-green-800"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Horario de Apertura</h4>
+                                    <p class="text-gray-600">Lunes a Sábado: Hasta las 21:00</p>
+                                    <p class="text-sm text-orange-600 mt-1 italic">El horario puede variar en festivos locales (como Lunes de Pascua).</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                             <a href="https://www.google.com/maps/dir//C.+de+Tom%C3%A1s+Bret%C3%B3n,+26,+50005+Zaragoza" target="_blank" class="inline-block bg-gray-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-black transition">
+                                Abrir en Google Maps
+                             </a>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 px-4">
+                        <!-- Mapa Estático / Placeholder -->
+                        <div class="rounded-3xl overflow-hidden shadow-2xl h-[400px] bg-gray-200 flex items-center justify-center border-4 border-white">
+                             <div class="text-center p-8">
+                                <i class="fas fa-map-marked-alt text-6xl text-gray-400 mb-4"></i>
+                                <p class="text-gray-500 font-medium">Mapa interactivo de C/ Tomás Bretón, 26</p>
+                                <p class="text-sm text-gray-400">Zaragoza, España</p>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PÁGINAS LEGALES -->
+    <div id="aviso-legal" class="legal-content pt-32 pb-20 px-4 max-w-4xl mx-auto">
+        <button onclick="showPage('main-content')" class="text-green-800 font-bold mb-8 flex items-center">
+            <i class="fas fa-arrow-left mr-2"></i> Volver al inicio
+        </button>
+        <h2 class="text-4xl font-bold mb-6">Aviso Legal</h2>
+        <div class="prose lg:prose-xl text-gray-600 space-y-4">
+            <p>En cumplimiento de la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico (LSSI-CE), le informamos:</p>
+            <p><strong>Titular:</strong> Frutería Zaragoza</p>
+            <p><strong>Domicilio Social:</strong> C/ Tomás Bretón, 26, 50005 Zaragoza</p>
+            <p><strong>Contacto:</strong> 631 71 71 79</p>
+            <p>El acceso y/o uso de este portal le atribuye la condición de USUARIO, que acepta, desde dicho acceso y/o uso, las Condiciones Generales de Uso aquí reflejadas.</p>
+            <h3 class="text-xl font-bold text-gray-800 mt-6">Propiedad Intelectual</h3>
+            <p>Frutería Zaragoza es titular de todos los derechos de propiedad intelectual e industrial de su página web, así como de los elementos contenidos en la misma (a título enunciativo, imágenes, sonido, audio, vídeo, software o textos; marcas o logotipos, combinaciones de colores, estructura y diseño).</p>
+        </div>
+    </div>
+
+    <div id="politica-privacidad" class="legal-content pt-32 pb-20 px-4 max-w-4xl mx-auto">
+        <button onclick="showPage('main-content')" class="text-green-800 font-bold mb-8 flex items-center">
+            <i class="fas fa-arrow-left mr-2"></i> Volver al inicio
+        </button>
+        <h2 class="text-4xl font-bold mb-6">Política de Privacidad</h2>
+        <div class="prose lg:prose-xl text-gray-600 space-y-4">
+            <p>Frutería Zaragoza informa a los usuarios del sitio web sobre su política respecto del tratamiento y protección de los datos de carácter personal de los usuarios y clientes.</p>
+            <p><strong>Finalidad del tratamiento:</strong> Gestionar las solicitudes de información, dudas o pedidos realizados a través del teléfono o de forma presencial.</p>
+            <p><strong>Derechos:</strong> Usted tiene derecho a acceder, rectificar, limitar y suprimir sus datos en cualquier momento dirigiéndose a nuestro establecimiento físico.</p>
+            <p>Sus datos no serán cedidos a terceros salvo obligación legal.</p>
+        </div>
+    </div>
+
+    <div id="politica-cookies" class="legal-content pt-32 pb-20 px-4 max-w-4xl mx-auto">
+        <button onclick="showPage('main-content')" class="text-green-800 font-bold mb-8 flex items-center">
+            <i class="fas fa-arrow-left mr-2"></i> Volver al inicio
+        </button>
+        <h2 class="text-4xl font-bold mb-6">Política de Cookies</h2>
+        <div class="prose lg:prose-xl text-gray-600 space-y-4">
+            <p>Este sitio web puede utilizar cookies para mejorar la experiencia del usuario.</p>
+            <p><strong>¿Qué son las cookies?</strong> Una cookie es un fichero que se descarga en su ordenador al acceder a determinadas páginas web. Las cookies permiten a una página web, entre otras cosas, almacenar y recuperar información sobre los hábitos de navegación de un usuario.</p>
+            <p>Usted puede permitir, bloquear o eliminar las cookies instaladas en su equipo mediante la configuración de las opciones del navegador instalado en su ordenador.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <span class="text-2xl font-bold text-green-800 tracking-tighter">FRUTERÍA <span class="text-orange-500">ZARAGOZA</span></span>
+                    <p class="mt-4 text-gray-500 max-w-md">Llevamos décadas seleccionando lo mejor de la tierra para nuestros vecinos de Zaragoza. Frescura garantizada y trato cercano en cada compra.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Legales</h4>
+                    <ul class="space-y-2 text-gray-500 text-sm">
+                        <li><a href="javascript:void(0)" onclick="showPage('aviso-legal')" class="hover:text-green-700">Aviso Legal</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('politica-privacidad')" class="hover:text-green-700">Política de Privacidad</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('politica-cookies')" class="hover:text-green-700">Política de Cookies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contacto</h4>
+                    <p class="text-gray-500 text-sm">C/ Tomás Bretón, 26<br>50005 Zaragoza</p>
+                    <p class="text-gray-500 text-sm mt-2 font-bold">631 71 71 79</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2024 Frutería Zaragoza. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Banner de Cookies Simple -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 z-[100] transform translate-y-0 transition-transform">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-sm">Utilizamos cookies propias para mejorar tu experiencia. Al navegar aceptas nuestra <a href="javascript:void(0)" onclick="showPage('politica-cookies')" class="underline">política de cookies</a>.</p>
+            <button onclick="acceptCookies()" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg text-sm font-bold">Aceptar</button>
+        </div>
+    </div>
+
+    <script>
+        // Navegación entre páginas legales y principal
+        function showPage(pageId) {
+            // Ocultar todo
+            document.getElementById('main-content').classList.remove('active-page');
+            document.getElementById('aviso-legal').classList.remove('active-page');
+            document.getElementById('politica-privacidad').classList.remove('active-page');
+            document.getElementById('politica-cookies').classList.remove('active-page');
+            
+            // Mostrar la seleccionada
+            document.getElementById(pageId).classList.add('active-page');
+            window.scrollTo(0, 0);
+        }
+
+        // Gestión de Cookies
+        function acceptCookies() {
+            document.getElementById('cookie-banner').style.transform = 'translateY(100%)';
+            localStorage.setItem('cookiesAccepted', 'true');
+        }
+
+        window.onload = function() {
+            if (localStorage.getItem('cookiesAccepted')) {
+                document.getElementById('cookie-banner').style.display = 'none';
+            }
+        }
+
+        // Menú móvil (Básico)
+        const btn = document.getElementById('mobile-menu-button');
+        btn.addEventListener('click', () => {
+             // Funcionalidad extra para menú móvil si fuera necesario
+             alert('Navegación: Use los enlaces de la parte superior o baje por la página.');
+        });
+    </script>
+</body>
+</html>
